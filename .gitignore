@@ -1,0 +1,9 @@
+.gradle
+gradle
+.idea
+.DS_Store
+app/build
+**/app/build
+*local.properties
+**/app/build/intermediates
+*.prefs
