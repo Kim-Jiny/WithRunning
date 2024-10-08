@@ -27,104 +27,87 @@ extension ViewControllerLifecycleBehavior {
     func viewDidLayoutSubviews(viewController: UIViewController) {}
 }
 
+
 extension UIViewController {
-    /*
-     Add behaviors to be hooked into this view controller’s lifecycle.
-
-     This method requires the view controller’s view to be loaded, so it’s best to call
-     in `viewDidLoad` to avoid it being loaded prematurely.
-
-     - parameter behaviors: Behaviors to be added.
-     */
     func addBehaviors(_ behaviors: [ViewControllerLifecycleBehavior]) {
-        let behaviorViewController = LifecycleBehaviorViewController(behaviors: behaviors)
-
-        addChild(behaviorViewController)
-        view.addSubview(behaviorViewController.view)
-        behaviorViewController.didMove(toParent: self)
+        let behaviorHandler = LifecycleBehaviorHandler(behaviors: behaviors)
+        behaviorHandler.apply(to: self)
     }
 
-    private final class LifecycleBehaviorViewController: UIViewController, UIGestureRecognizerDelegate {
+    private final class LifecycleBehaviorHandler {
         private let behaviors: [ViewControllerLifecycleBehavior]
-
-        // MARK: - Lifecycle
 
         init(behaviors: [ViewControllerLifecycleBehavior]) {
             self.behaviors = behaviors
-
-            super.init(nibName: nil, bundle: nil)
         }
 
-        required init?(coder aDecoder: NSCoder) {
-            fatalError("init(coder:) has not been implemented")
+        func apply(to viewController: UIViewController) {
+            // Override each lifecycle method to apply behaviors
+            swizzle(viewController: viewController, original: #selector(UIViewController.viewDidLoad), swizzled: #selector(viewController.swizzled_viewDidLoad))
+            swizzle(viewController: viewController, original: #selector(UIViewController.viewWillAppear(_:)), swizzled: #selector(viewController.swizzled_viewWillAppear(_:)))
+            swizzle(viewController: viewController, original: #selector(UIViewController.viewDidAppear(_:)), swizzled: #selector(viewController.swizzled_viewDidAppear(_:)))
+            swizzle(viewController: viewController, original: #selector(UIViewController.viewWillDisappear(_:)), swizzled: #selector(viewController.swizzled_viewWillDisappear(_:)))
+            swizzle(viewController: viewController, original: #selector(UIViewController.viewDidDisappear(_:)), swizzled: #selector(viewController.swizzled_viewDidDisappear(_:)))
+            swizzle(viewController: viewController, original: #selector(UIViewController.viewWillLayoutSubviews), swizzled: #selector(viewController.swizzled_viewWillLayoutSubviews))
+            swizzle(viewController: viewController, original: #selector(UIViewController.viewDidLayoutSubviews), swizzled: #selector(viewController.swizzled_viewDidLayoutSubviews))
         }
 
-        override func viewDidLoad() {
-            super.viewDidLoad()
-
-            view.isHidden = true
-
-            applyBehaviors { behavior, viewController in
-                behavior.viewDidLoad(viewController: viewController)
+        private func swizzle(viewController: UIViewController, original: Selector, swizzled: Selector) {
+            guard let originalMethod = class_getInstanceMethod(type(of: viewController), original),
+                  let swizzledMethod = class_getInstanceMethod(type(of: viewController), swizzled) else {
+                return
             }
+            method_exchangeImplementations(originalMethod, swizzledMethod)
         }
+    }
+}
 
-        override func viewWillAppear(_ animated: Bool) {
-            super.viewWillAppear(animated)
+extension UIViewController {
+    @objc func swizzled_viewDidLoad() {
+        self.swizzled_viewDidLoad() // Call the original viewDidLoad
+        applyBehaviors { $0.viewDidLoad(viewController: self) }
+    }
 
-            applyBehaviors { behavior, viewController in
-                behavior.viewWillAppear(viewController: viewController)
-            }
-        }
+    @objc func swizzled_viewWillAppear(_ animated: Bool) {
+        self.swizzled_viewWillAppear(animated)
+        applyBehaviors { $0.viewWillAppear(viewController: self) }
+    }
 
-        override func viewDidAppear(_ animated: Bool) {
-            super.viewDidAppear(animated)
+    @objc func swizzled_viewDidAppear(_ animated: Bool) {
+        self.swizzled_viewDidAppear(animated)
+        applyBehaviors { $0.viewDidAppear(viewController: self) }
+    }
 
-            applyBehaviors { behavior, viewController in
-                behavior.viewDidAppear(viewController: viewController)
-            }
-        }
+    @objc func swizzled_viewWillDisappear(_ animated: Bool) {
+        self.swizzled_viewWillDisappear(animated)
+        applyBehaviors { $0.viewWillDisappear(viewController: self) }
+    }
 
-        override func viewWillDisappear(_ animated: Bool) {
-            super.viewWillDisappear(animated)
+    @objc func swizzled_viewDidDisappear(_ animated: Bool) {
+        self.swizzled_viewDidDisappear(animated)
+        applyBehaviors { $0.viewDidDisappear(viewController: self) }
+    }
 
-            applyBehaviors { behavior, viewController in
-                behavior.viewWillDisappear(viewController: viewController)
-            }
-        }
+    @objc func swizzled_viewWillLayoutSubviews() {
+        self.swizzled_viewWillLayoutSubviews()
+        applyBehaviors { $0.viewWillLayoutSubviews(viewController: self) }
+    }
 
-        override func viewDidDisappear(_ animated: Bool) {
-            super.viewDidDisappear(animated)
+    @objc func swizzled_viewDidLayoutSubviews() {
+        self.swizzled_viewDidLayoutSubviews()
+        applyBehaviors { $0.viewDidLayoutSubviews(viewController: self) }
+    }
 
-            applyBehaviors { behavior, viewController in
-                behavior.viewDidDisappear(viewController: viewController)
-            }
-        }
-
-        override func viewWillLayoutSubviews() {
-            super.viewWillLayoutSubviews()
-
-            applyBehaviors { behavior, viewController in
-                behavior.viewWillLayoutSubviews(viewController: viewController)
-            }
-        }
-
-        override func viewDidLayoutSubviews() {
-            super.viewDidLayoutSubviews()
-
-            applyBehaviors { behavior, viewController in
-                behavior.viewDidLayoutSubviews(viewController: viewController)
-            }
-        }
-
-        // MARK: - Private
-
-        private func applyBehaviors(body: (_ behavior: ViewControllerLifecycleBehavior, _ viewController: UIViewController) -> Void) {
-            guard let parent = parent else { return }
-
+    private func applyBehaviors(body: (_ behavior: ViewControllerLifecycleBehavior) -> Void) {
+        // Apply each behavior manually
+        if let behaviors = objc_getAssociatedObject(self, &AssociatedKeys.behaviors) as? [ViewControllerLifecycleBehavior] {
             for behavior in behaviors {
-                body(behavior, parent)
+                body(behavior)
             }
         }
     }
+}
+
+private struct AssociatedKeys {
+    static var behaviors = "behaviors"
 }

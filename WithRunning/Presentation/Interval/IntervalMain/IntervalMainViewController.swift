@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class IntervalMainViewController: UIViewController, XibInstantiable {
+class IntervalMainViewController: UITabBarController, StoryboardInstantiable {
     
     private var viewModel: IntervalMainViewModel!
     

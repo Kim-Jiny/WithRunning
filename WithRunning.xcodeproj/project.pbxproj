@@ -25,7 +25,10 @@
 		30BBAA3C2CB5096F00A84090 /* UIViewController+AddBehaviors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BBAA3B2CB5096F00A84090 /* UIViewController+AddBehaviors.swift */; };
 		30BBAA3F2CB509A100A84090 /* BackButtonEmptyTitleNavigationBarBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BBAA3E2CB509A100A84090 /* BackButtonEmptyTitleNavigationBarBehavior.swift */; };
 		30BBAA412CB509D100A84090 /* BlackStyleNavigationBarBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BBAA402CB509D100A84090 /* BlackStyleNavigationBarBehavior.swift */; };
-		30BBAA442CB509F900A84090 /* IntervalMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30BBAA432CB509F900A84090 /* IntervalMainViewController.xib */; };
+		30BBAA492CB5140F00A84090 /* MypageTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BBAA462CB5140F00A84090 /* MypageTabViewController.swift */; };
+		30BBAA4F2CB5143F00A84090 /* IntervalListTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BBAA4C2CB5143F00A84090 /* IntervalListTabViewController.swift */; };
+		30BBAA532CB517AA00A84090 /* StoryboardInstantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BBAA522CB517AA00A84090 /* StoryboardInstantiable.swift */; };
+		30BBAA552CB517E400A84090 /* IntervalMainViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30BBAA542CB517E400A84090 /* IntervalMainViewController.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,7 +71,10 @@
 		30BBAA3B2CB5096F00A84090 /* UIViewController+AddBehaviors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+AddBehaviors.swift"; sourceTree = "<group>"; };
 		30BBAA3E2CB509A100A84090 /* BackButtonEmptyTitleNavigationBarBehavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButtonEmptyTitleNavigationBarBehavior.swift; sourceTree = "<group>"; };
 		30BBAA402CB509D100A84090 /* BlackStyleNavigationBarBehavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackStyleNavigationBarBehavior.swift; sourceTree = "<group>"; };
-		30BBAA432CB509F900A84090 /* IntervalMainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IntervalMainViewController.xib; sourceTree = "<group>"; };
+		30BBAA462CB5140F00A84090 /* MypageTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageTabViewController.swift; sourceTree = "<group>"; };
+		30BBAA4C2CB5143F00A84090 /* IntervalListTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalListTabViewController.swift; sourceTree = "<group>"; };
+		30BBAA522CB517AA00A84090 /* StoryboardInstantiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardInstantiable.swift; sourceTree = "<group>"; };
+		30BBAA542CB517E400A84090 /* IntervalMainViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = IntervalMainViewController.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,7 +178,9 @@
 				30BBAA3D2CB5099700A84090 /* Behaviors */,
 				30BBAA2C2CB503C500A84090 /* ViewModels */,
 				30BBAA2A2CB5038E00A84090 /* IntervalMainViewController.swift */,
-				30BBAA432CB509F900A84090 /* IntervalMainViewController.xib */,
+				30BBAA542CB517E400A84090 /* IntervalMainViewController.storyboard */,
+				30BBAA462CB5140F00A84090 /* MypageTabViewController.swift */,
+				30BBAA4C2CB5143F00A84090 /* IntervalListTabViewController.swift */,
 			);
 			path = IntervalMain;
 			sourceTree = "<group>";
@@ -216,6 +224,7 @@
 			children = (
 				30BBAA362CB5075C00A84090 /* DispatchQueueType.swift */,
 				30BBAA382CB5081800A84090 /* XibInstantiable.swift */,
+				30BBAA522CB517AA00A84090 /* StoryboardInstantiable.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -349,8 +358,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				30BBAA442CB509F900A84090 /* IntervalMainViewController.xib in Resources */,
 				30BBA9FB2CB501E400A84090 /* Assets.xcassets in Resources */,
+				30BBAA552CB517E400A84090 /* IntervalMainViewController.storyboard in Resources */,
 				30BBA9FE2CB501E400A84090 /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -387,7 +396,10 @@
 				30BBAA2B2CB5038E00A84090 /* IntervalMainViewController.swift in Sources */,
 				30BBAA262CB5030C00A84090 /* IntervalMainCoordinator.swift in Sources */,
 				30BBAA392CB5081800A84090 /* XibInstantiable.swift in Sources */,
+				30BBAA4F2CB5143F00A84090 /* IntervalListTabViewController.swift in Sources */,
+				30BBAA492CB5140F00A84090 /* MypageTabViewController.swift in Sources */,
 				30BBA9F22CB501E300A84090 /* AppDelegate.swift in Sources */,
+				30BBAA532CB517AA00A84090 /* StoryboardInstantiable.swift in Sources */,
 				30BBA9F42CB501E300A84090 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
