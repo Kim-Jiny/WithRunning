@@ -43,6 +43,7 @@ final class IntervalMainCoordinator {
         
         // 뷰 컨트롤러들을 탭 바에 추가
         vc.viewControllers = [firstVC, secondVC, thirdVC]
+        vc.tabBar.tintColor = .yellow
         
         print("vc viewcontrollers: \(vc.viewControllers)")
         navigationController?.pushViewController(vc, animated: false)
