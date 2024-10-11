@@ -39,6 +39,13 @@
 		30BBAA702CB9085B00A84090 /* IntervalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BBAA6D2CB9085B00A84090 /* IntervalDetailViewController.swift */; };
 		30BBAA722CB9091600A84090 /* IntervalDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BBAA712CB9091600A84090 /* IntervalDetailViewModel.swift */; };
 		30BBAA772CB90A5C00A84090 /* AccessibilityIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BBAA762CB90A5C00A84090 /* AccessibilityIdentifier.swift */; };
+		30BBAA7C2CB9121B00A84090 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BBAA7B2CB9121B00A84090 /* UserDefaultsManager.swift */; };
+		30BBAA802CB9130500A84090 /* IntervalCourseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BBAA7F2CB9130500A84090 /* IntervalCourseRepository.swift */; };
+		30BBAA822CB9131700A84090 /* DefaultIntervalCourseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BBAA812CB9131700A84090 /* DefaultIntervalCourseRepository.swift */; };
+		30BBAA842CB9137800A84090 /* Cancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BBAA832CB9137800A84090 /* Cancellable.swift */; };
+		30BBAA882CB913E500A84090 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BBAA872CB913E500A84090 /* NetworkService.swift */; };
+		30BBAA8A2CB9141800A84090 /* RepositoryTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BBAA892CB9141800A84090 /* RepositoryTask.swift */; };
+		30BBAA8D2CB9166300A84090 /* GetIntervalCourseUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BBAA8C2CB9166300A84090 /* GetIntervalCourseUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +101,13 @@
 		30BBAA6E2CB9085B00A84090 /* IntervalDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IntervalDetailViewController.xib; sourceTree = "<group>"; };
 		30BBAA712CB9091600A84090 /* IntervalDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalDetailViewModel.swift; sourceTree = "<group>"; };
 		30BBAA762CB90A5C00A84090 /* AccessibilityIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityIdentifier.swift; sourceTree = "<group>"; };
+		30BBAA7B2CB9121B00A84090 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		30BBAA7F2CB9130500A84090 /* IntervalCourseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalCourseRepository.swift; sourceTree = "<group>"; };
+		30BBAA812CB9131700A84090 /* DefaultIntervalCourseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultIntervalCourseRepository.swift; sourceTree = "<group>"; };
+		30BBAA832CB9137800A84090 /* Cancellable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cancellable.swift; sourceTree = "<group>"; };
+		30BBAA872CB913E500A84090 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		30BBAA892CB9141800A84090 /* RepositoryTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTask.swift; sourceTree = "<group>"; };
+		30BBAA8C2CB9166300A84090 /* GetIntervalCourseUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetIntervalCourseUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,7 +159,9 @@
 		30BBA9F02CB501E300A84090 /* WithRunning */ = {
 			isa = PBXGroup;
 			children = (
+				30BBAA852CB913C900A84090 /* Infrastructure */,
 				30BBAA562CB522B900A84090 /* Resources */,
+				30BBAA782CB910E100A84090 /* Data */,
 				30BBAA662CB9024300A84090 /* Domain */,
 				30BBAA352CB5075100A84090 /* Common */,
 				30BBAA242CB5030000A84090 /* Presentation */,
@@ -239,9 +255,11 @@
 		30BBAA352CB5075100A84090 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				30BBAA7B2CB9121B00A84090 /* UserDefaultsManager.swift */,
 				30BBAA362CB5075C00A84090 /* DispatchQueueType.swift */,
 				30BBAA382CB5081800A84090 /* XibInstantiable.swift */,
 				30BBAA522CB517AA00A84090 /* StoryboardInstantiable.swift */,
+				30BBAA832CB9137800A84090 /* Cancellable.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -315,6 +333,8 @@
 		30BBAA662CB9024300A84090 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				30BBAA8B2CB9164F00A84090 /* UseCases */,
+				30BBAA7D2CB912E700A84090 /* Interfaces */,
 				30BBAA672CB9025000A84090 /* Entities */,
 			);
 			path = Domain;
@@ -361,6 +381,71 @@
 				30BBAA5F2CB9005100A84090 /* Views */,
 			);
 			path = IntervalList;
+			sourceTree = "<group>";
+		};
+		30BBAA782CB910E100A84090 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				30BBAA792CB911B700A84090 /* Repositories */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		30BBAA792CB911B700A84090 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				30BBAA7A2CB911CE00A84090 /* Utils */,
+				30BBAA812CB9131700A84090 /* DefaultIntervalCourseRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		30BBAA7A2CB911CE00A84090 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				30BBAA892CB9141800A84090 /* RepositoryTask.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		30BBAA7D2CB912E700A84090 /* Interfaces */ = {
+			isa = PBXGroup;
+			children = (
+				30BBAA7E2CB912ED00A84090 /* Repositories */,
+			);
+			path = Interfaces;
+			sourceTree = "<group>";
+		};
+		30BBAA7E2CB912ED00A84090 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				30BBAA7F2CB9130500A84090 /* IntervalCourseRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		30BBAA852CB913C900A84090 /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				30BBAA862CB913DB00A84090 /* Network */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		30BBAA862CB913DB00A84090 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				30BBAA872CB913E500A84090 /* NetworkService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		30BBAA8B2CB9164F00A84090 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				30BBAA8C2CB9166300A84090 /* GetIntervalCourseUseCase.swift */,
+			);
+			path = UseCases;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -508,18 +593,25 @@
 				30BBAA5E2CB8FFCE00A84090 /* MyHistoryTabViewController.swift in Sources */,
 				30BBAA232CB5028000A84090 /* AppFlowCoordinator.swift in Sources */,
 				30BBAA412CB509D100A84090 /* BlackStyleNavigationBarBehavior.swift in Sources */,
+				30BBAA882CB913E500A84090 /* NetworkService.swift in Sources */,
 				30BBAA3C2CB5096F00A84090 /* UIViewController+AddBehaviors.swift in Sources */,
 				30BBAA2E2CB503D500A84090 /* IntervalViewModel.swift in Sources */,
 				30BBAA372CB5075C00A84090 /* DispatchQueueType.swift in Sources */,
+				30BBAA842CB9137800A84090 /* Cancellable.swift in Sources */,
 				30BBAA342CB506C300A84090 /* IntervalMainItemViewModel.swift in Sources */,
 				30BBAA2B2CB5038E00A84090 /* IntervalMainViewController.swift in Sources */,
+				30BBAA8A2CB9141800A84090 /* RepositoryTask.swift in Sources */,
 				30BBAA622CB9007600A84090 /* IntervalListTableViewController.swift in Sources */,
+				30BBAA8D2CB9166300A84090 /* GetIntervalCourseUseCase.swift in Sources */,
 				30BBAA262CB5030C00A84090 /* IntervalMainCoordinator.swift in Sources */,
 				30BBAA392CB5081800A84090 /* XibInstantiable.swift in Sources */,
+				30BBAA7C2CB9121B00A84090 /* UserDefaultsManager.swift in Sources */,
 				30BBAA4F2CB5143F00A84090 /* IntervalListTabViewController.swift in Sources */,
 				30BBAA492CB5140F00A84090 /* MypageTabViewController.swift in Sources */,
 				30BBAA652CB9015300A84090 /* IntervalListItemCell.swift in Sources */,
+				30BBAA822CB9131700A84090 /* DefaultIntervalCourseRepository.swift in Sources */,
 				30BBAA772CB90A5C00A84090 /* AccessibilityIdentifier.swift in Sources */,
+				30BBAA802CB9130500A84090 /* IntervalCourseRepository.swift in Sources */,
 				30BBA9F22CB501E300A84090 /* AppDelegate.swift in Sources */,
 				30BBAA532CB517AA00A84090 /* StoryboardInstantiable.swift in Sources */,
 				30BBAA692CB9025E00A84090 /* IntervalUnit.swift in Sources */,

@@ -10,7 +10,7 @@ import UIKit
 
 protocol IntervalMainCoordinatorDependencies {
     func makeIntervalMainViewController(actions: IntervalMainViewModelActions) -> IntervalMainViewController
-    func makeIntervalDetailsViewController(cos: IntervalCos) -> IntervalDetailViewController
+    func makeIntervalDetailsViewController(course: IntervalCourse) -> IntervalDetailViewController
 }
 
 
@@ -50,8 +50,9 @@ final class IntervalMainCoordinator {
         intervalMainVC = vc
     }
     
-    private func showIntervalDetails(cos: IntervalCos) {
-        let vc = dependencies.makeIntervalDetailsViewController(cos: cos)
+    private func showIntervalDetails(course: IntervalCourse) {
+        let vc = dependencies.makeIntervalDetailsViewController(course: course)
         navigationController?.pushViewController(vc, animated: true)
     }
+    
 }

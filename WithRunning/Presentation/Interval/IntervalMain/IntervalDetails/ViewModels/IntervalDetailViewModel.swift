@@ -23,10 +23,10 @@ final class DefaultIntervalDetailViewModel: IntervalDetailViewModel {
     private let mainQueue: DispatchQueueType
     
     init(
-        cos: IntervalCos,
+        course: IntervalCourse,
         mainQueue: DispatchQueueType = DispatchQueue.main
     ) {
-        self.title = cos.title ?? ""
+        self.title = course.title ?? ""
         self.mainQueue = mainQueue
     }
 }

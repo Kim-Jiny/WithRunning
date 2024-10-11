@@ -36,16 +36,28 @@ extension AppFlowCoordinator: IntervalMainCoordinatorDependencies {
     
     func makeIntervalMainViewModel(actions: IntervalMainViewModelActions) -> IntervalMainViewModel {
         DefaultIntervalMainViewModel(
+            getIntervalCourseUseCase: makeGetIntervalCourseUseCase(),
             actions: actions
         )
     }
     
-    func makeIntervalDetailsViewController(cos: IntervalCos) -> IntervalDetailViewController {
-        IntervalDetailViewController.create(with: makeMoviesDetailsViewModel(cos: cos))
+    func makeIntervalDetailsViewController(course: IntervalCourse) -> IntervalDetailViewController {
+        IntervalDetailViewController.create(with: makeMoviesDetailsViewModel(course: course))
     }
     
     
-    func makeMoviesDetailsViewModel(cos: IntervalCos) -> IntervalDetailViewModel {
-        DefaultIntervalDetailViewModel(cos: cos)
+    func makeMoviesDetailsViewModel(course: IntervalCourse) -> IntervalDetailViewModel {
+        DefaultIntervalDetailViewModel(course: course)
+    }
+    
+    
+    // MARK: - Use Cases
+    func makeGetIntervalCourseUseCase() -> GetIntervalCourseUseCase {
+        DefaultGetIntervalCourseUseCase(intervalCourseRepository: makeIntervalCourseRepository())
+    }
+    
+    // MARK: - Repositories
+    private func makeIntervalCourseRepository() -> IntervalCourseRepository {
+        DefaultIntervalCourseRepository()
     }
 }

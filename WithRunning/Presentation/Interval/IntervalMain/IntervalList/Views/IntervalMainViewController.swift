@@ -33,7 +33,6 @@ class IntervalMainViewController: UITabBarController, StoryboardInstantiable {
     
     private func bind(to viewModel: IntervalMainViewModel) {
         viewModel.items.observe(on: self) { [weak self] _ in self?.updateItems() }
-//        viewModel.loading.observe(on: self) { [weak self] in self?.updateLoading($0) }
     }
     
     // MARK: - Private
@@ -48,6 +47,6 @@ class IntervalMainViewController: UITabBarController, StoryboardInstantiable {
     }
     
     private func updateItems() {
-        
+        print("success get \(viewModel.items.value)")
     }
 }

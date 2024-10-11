@@ -11,10 +11,17 @@ struct IntervalUnit: Equatable, Identifiable {
     typealias Identifier = String
     let id: Identifier
     let title: String?
-    let time: Int
+    let timeInSeconds: Int
+
+    // 분과 초를 반환하는 헬퍼 메서드
+    func formattedTime() -> String {
+        let minutes = timeInSeconds / 60
+        let seconds = timeInSeconds % 60
+        return "\(minutes)분 \(seconds)초"
+    }
 }
 
-struct IntervalCos: Equatable, Identifiable {
+struct IntervalCourse: Equatable, Identifiable {
     typealias Identifier = String
     let id: Identifier
     let title: String?
