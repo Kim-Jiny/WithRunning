@@ -10,6 +10,7 @@ import UIKit
 
 protocol IntervalMainCoordinatorDependencies {
     func makeIntervalMainViewController(actions: IntervalMainViewModelActions) -> IntervalMainViewController
+    func makeIntervalDetailsViewController(cos: IntervalCos) -> IntervalDetailViewController
 }
 
 
@@ -28,7 +29,7 @@ final class IntervalMainCoordinator {
     
     func start() {
         // Note: here we keep strong reference with actions, this way this flow do not need to be strong referenced
-        let actions = IntervalMainViewModelActions()
+        let actions = IntervalMainViewModelActions(showIntervalDetail: showIntervalDetails)
         let vc = dependencies.makeIntervalMainViewController(actions: actions)
         
         // 각 ViewController를 xib에서 불러오기
@@ -38,15 +39,19 @@ final class IntervalMainCoordinator {
         let secondVC = MypageTabViewController.instantiateViewController(from: UIStoryboard(name: "IntervalMainViewController", bundle: nil))
         secondVC.tabBarItem = UITabBarItem(title: "Second", image: UIImage(systemName: "2.circle"), tag: 1)
         
-        let thirdVC = MypageTabViewController.instantiateViewController(from: UIStoryboard(name: "IntervalMainViewController", bundle: nil))
+        let thirdVC = MyHistoryTabViewController.instantiateViewController(from: UIStoryboard(name: "IntervalMainViewController", bundle: nil))
         thirdVC.tabBarItem = UITabBarItem(title: "third", image: UIImage(systemName: "3.circle"), tag: 2)
         
         // 뷰 컨트롤러들을 탭 바에 추가
         vc.viewControllers = [firstVC, secondVC, thirdVC]
-        vc.tabBar.tintColor = .yellow
+        vc.tabBar.tintColor = .intervalTabTint
         
-        print("vc viewcontrollers: \(vc.viewControllers)")
         navigationController?.pushViewController(vc, animated: false)
         intervalMainVC = vc
+    }
+    
+    private func showIntervalDetails(cos: IntervalCos) {
+        let vc = dependencies.makeIntervalDetailsViewController(cos: cos)
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

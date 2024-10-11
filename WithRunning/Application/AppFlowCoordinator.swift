@@ -29,6 +29,7 @@ final class AppFlowCoordinator {
 }
 
 extension AppFlowCoordinator: IntervalMainCoordinatorDependencies {
+    
     func makeIntervalMainViewController(actions: IntervalMainViewModelActions) -> IntervalMainViewController {
         IntervalMainViewController.create(with: makeIntervalMainViewModel(actions: actions))
     }
@@ -37,5 +38,14 @@ extension AppFlowCoordinator: IntervalMainCoordinatorDependencies {
         DefaultIntervalMainViewModel(
             actions: actions
         )
+    }
+    
+    func makeIntervalDetailsViewController(cos: IntervalCos) -> IntervalDetailViewController {
+        IntervalDetailViewController.create(with: makeMoviesDetailsViewModel(cos: cos))
+    }
+    
+    
+    func makeMoviesDetailsViewModel(cos: IntervalCos) -> IntervalDetailViewModel {
+        DefaultIntervalDetailViewModel(cos: cos)
     }
 }

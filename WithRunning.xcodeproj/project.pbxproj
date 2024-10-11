@@ -30,6 +30,15 @@
 		30BBAA532CB517AA00A84090 /* StoryboardInstantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BBAA522CB517AA00A84090 /* StoryboardInstantiable.swift */; };
 		30BBAA552CB517E400A84090 /* IntervalMainViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30BBAA542CB517E400A84090 /* IntervalMainViewController.storyboard */; };
 		30BBAA592CB522FA00A84090 /* AppColors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30BBAA582CB522FA00A84090 /* AppColors.xcassets */; };
+		30BBAA5C2CB7DBA800A84090 /* GoogleMaps in Frameworks */ = {isa = PBXBuildFile; productRef = 30BBAA5B2CB7DBA800A84090 /* GoogleMaps */; };
+		30BBAA5E2CB8FFCE00A84090 /* MyHistoryTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BBAA5D2CB8FFCE00A84090 /* MyHistoryTabViewController.swift */; };
+		30BBAA622CB9007600A84090 /* IntervalListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BBAA612CB9007600A84090 /* IntervalListTableViewController.swift */; };
+		30BBAA652CB9015300A84090 /* IntervalListItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BBAA642CB9015300A84090 /* IntervalListItemCell.swift */; };
+		30BBAA692CB9025E00A84090 /* IntervalUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BBAA682CB9025E00A84090 /* IntervalUnit.swift */; };
+		30BBAA6F2CB9085B00A84090 /* IntervalDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30BBAA6E2CB9085B00A84090 /* IntervalDetailViewController.xib */; };
+		30BBAA702CB9085B00A84090 /* IntervalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BBAA6D2CB9085B00A84090 /* IntervalDetailViewController.swift */; };
+		30BBAA722CB9091600A84090 /* IntervalDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BBAA712CB9091600A84090 /* IntervalDetailViewModel.swift */; };
+		30BBAA772CB90A5C00A84090 /* AccessibilityIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BBAA762CB90A5C00A84090 /* AccessibilityIdentifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +86,14 @@
 		30BBAA522CB517AA00A84090 /* StoryboardInstantiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardInstantiable.swift; sourceTree = "<group>"; };
 		30BBAA542CB517E400A84090 /* IntervalMainViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = IntervalMainViewController.storyboard; sourceTree = "<group>"; };
 		30BBAA582CB522FA00A84090 /* AppColors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppColors.xcassets; sourceTree = "<group>"; };
+		30BBAA5D2CB8FFCE00A84090 /* MyHistoryTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyHistoryTabViewController.swift; sourceTree = "<group>"; };
+		30BBAA612CB9007600A84090 /* IntervalListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalListTableViewController.swift; sourceTree = "<group>"; };
+		30BBAA642CB9015300A84090 /* IntervalListItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalListItemCell.swift; sourceTree = "<group>"; };
+		30BBAA682CB9025E00A84090 /* IntervalUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalUnit.swift; sourceTree = "<group>"; };
+		30BBAA6D2CB9085B00A84090 /* IntervalDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalDetailViewController.swift; sourceTree = "<group>"; };
+		30BBAA6E2CB9085B00A84090 /* IntervalDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IntervalDetailViewController.xib; sourceTree = "<group>"; };
+		30BBAA712CB9091600A84090 /* IntervalDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalDetailViewModel.swift; sourceTree = "<group>"; };
+		30BBAA762CB90A5C00A84090 /* AccessibilityIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityIdentifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30BBAA5C2CB7DBA800A84090 /* GoogleMaps in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				30BBAA562CB522B900A84090 /* Resources */,
+				30BBAA662CB9024300A84090 /* Domain */,
 				30BBAA352CB5075100A84090 /* Common */,
 				30BBAA242CB5030000A84090 /* Presentation */,
 				30BBAA212CB5027400A84090 /* Application */,
@@ -174,13 +193,10 @@
 		30BBAA272CB5033300A84090 /* IntervalMain */ = {
 			isa = PBXGroup;
 			children = (
+				30BBAA752CB9094200A84090 /* IntervalList */,
+				30BBAA6A2CB9081E00A84090 /* IntervalDetails */,
 				30BBAA422CB509E700A84090 /* Coordinator */,
 				30BBAA3D2CB5099700A84090 /* Behaviors */,
-				30BBAA2C2CB503C500A84090 /* ViewModels */,
-				30BBAA2A2CB5038E00A84090 /* IntervalMainViewController.swift */,
-				30BBAA542CB517E400A84090 /* IntervalMainViewController.storyboard */,
-				30BBAA462CB5140F00A84090 /* MypageTabViewController.swift */,
-				30BBAA4C2CB5143F00A84090 /* IntervalListTabViewController.swift */,
 			);
 			path = IntervalMain;
 			sourceTree = "<group>";
@@ -207,6 +223,7 @@
 			children = (
 				30BBAA3A2CB5096500A84090 /* Extenstions */,
 				30BBAA302CB5057000A84090 /* Protocols */,
+				30BBAA762CB90A5C00A84090 /* AccessibilityIdentifier.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -265,6 +282,87 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		30BBAA5F2CB9005100A84090 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				30BBAA602CB9005D00A84090 /* IntervalListTableViewController */,
+				30BBAA2A2CB5038E00A84090 /* IntervalMainViewController.swift */,
+				30BBAA542CB517E400A84090 /* IntervalMainViewController.storyboard */,
+				30BBAA462CB5140F00A84090 /* MypageTabViewController.swift */,
+				30BBAA4C2CB5143F00A84090 /* IntervalListTabViewController.swift */,
+				30BBAA5D2CB8FFCE00A84090 /* MyHistoryTabViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		30BBAA602CB9005D00A84090 /* IntervalListTableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				30BBAA632CB9014600A84090 /* Cells */,
+				30BBAA612CB9007600A84090 /* IntervalListTableViewController.swift */,
+			);
+			path = IntervalListTableViewController;
+			sourceTree = "<group>";
+		};
+		30BBAA632CB9014600A84090 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				30BBAA642CB9015300A84090 /* IntervalListItemCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		30BBAA662CB9024300A84090 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				30BBAA672CB9025000A84090 /* Entities */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		30BBAA672CB9025000A84090 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				30BBAA682CB9025E00A84090 /* IntervalUnit.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		30BBAA6A2CB9081E00A84090 /* IntervalDetails */ = {
+			isa = PBXGroup;
+			children = (
+				30BBAA742CB9092100A84090 /* ViewModels */,
+				30BBAA732CB9091A00A84090 /* Views */,
+			);
+			path = IntervalDetails;
+			sourceTree = "<group>";
+		};
+		30BBAA732CB9091A00A84090 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				30BBAA6D2CB9085B00A84090 /* IntervalDetailViewController.swift */,
+				30BBAA6E2CB9085B00A84090 /* IntervalDetailViewController.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		30BBAA742CB9092100A84090 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				30BBAA712CB9091600A84090 /* IntervalDetailViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		30BBAA752CB9094200A84090 /* IntervalList */ = {
+			isa = PBXGroup;
+			children = (
+				30BBAA2C2CB503C500A84090 /* ViewModels */,
+				30BBAA5F2CB9005100A84090 /* Views */,
+			);
+			path = IntervalList;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -281,6 +379,9 @@
 			dependencies = (
 			);
 			name = WithRunning;
+			packageProductDependencies = (
+				30BBAA5B2CB7DBA800A84090 /* GoogleMaps */,
+			);
 			productName = WithRunning;
 			productReference = 30BBA9EE2CB501E300A84090 /* WithRunning.app */;
 			productType = "com.apple.product-type.application";
@@ -353,6 +454,9 @@
 				Base,
 			);
 			mainGroup = 30BBA9E52CB501E300A84090;
+			packageReferences = (
+				30BBAA5A2CB7DBA800A84090 /* XCRemoteSwiftPackageReference "ios-maps-sdk" */,
+			);
 			productRefGroup = 30BBA9EF2CB501E300A84090 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -372,6 +476,7 @@
 				30BBA9FB2CB501E400A84090 /* Assets.xcassets in Resources */,
 				30BBAA592CB522FA00A84090 /* AppColors.xcassets in Resources */,
 				30BBAA552CB517E400A84090 /* IntervalMainViewController.storyboard in Resources */,
+				30BBAA6F2CB9085B00A84090 /* IntervalDetailViewController.xib in Resources */,
 				30BBA9FE2CB501E400A84090 /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -399,6 +504,8 @@
 			files = (
 				30BBAA3F2CB509A100A84090 /* BackButtonEmptyTitleNavigationBarBehavior.swift in Sources */,
 				30BBAA322CB5057D00A84090 /* Observable.swift in Sources */,
+				30BBAA702CB9085B00A84090 /* IntervalDetailViewController.swift in Sources */,
+				30BBAA5E2CB8FFCE00A84090 /* MyHistoryTabViewController.swift in Sources */,
 				30BBAA232CB5028000A84090 /* AppFlowCoordinator.swift in Sources */,
 				30BBAA412CB509D100A84090 /* BlackStyleNavigationBarBehavior.swift in Sources */,
 				30BBAA3C2CB5096F00A84090 /* UIViewController+AddBehaviors.swift in Sources */,
@@ -406,12 +513,17 @@
 				30BBAA372CB5075C00A84090 /* DispatchQueueType.swift in Sources */,
 				30BBAA342CB506C300A84090 /* IntervalMainItemViewModel.swift in Sources */,
 				30BBAA2B2CB5038E00A84090 /* IntervalMainViewController.swift in Sources */,
+				30BBAA622CB9007600A84090 /* IntervalListTableViewController.swift in Sources */,
 				30BBAA262CB5030C00A84090 /* IntervalMainCoordinator.swift in Sources */,
 				30BBAA392CB5081800A84090 /* XibInstantiable.swift in Sources */,
 				30BBAA4F2CB5143F00A84090 /* IntervalListTabViewController.swift in Sources */,
 				30BBAA492CB5140F00A84090 /* MypageTabViewController.swift in Sources */,
+				30BBAA652CB9015300A84090 /* IntervalListItemCell.swift in Sources */,
+				30BBAA772CB90A5C00A84090 /* AccessibilityIdentifier.swift in Sources */,
 				30BBA9F22CB501E300A84090 /* AppDelegate.swift in Sources */,
 				30BBAA532CB517AA00A84090 /* StoryboardInstantiable.swift in Sources */,
+				30BBAA692CB9025E00A84090 /* IntervalUnit.swift in Sources */,
+				30BBAA722CB9091600A84090 /* IntervalDetailViewModel.swift in Sources */,
 				30BBA9F42CB501E300A84090 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -589,6 +701,10 @@
 				DEVELOPMENT_TEAM = HW9XJ9J5M2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WithRunning/Resources/Info.plist;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "러닝 기록을 확인 하기 위해 건강 데이터가 필요합니다.";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "러닝 기록을 확인 하기 위해 건강 데이터가 필요합니다.";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "러닝 경로를 표시하기 위해 위치 권한이 필요합니다.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "러닝 경로를 표시하기 위해 위치 권한이 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -616,6 +732,10 @@
 				DEVELOPMENT_TEAM = HW9XJ9J5M2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WithRunning/Resources/Info.plist;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "러닝 기록을 확인 하기 위해 건강 데이터가 필요합니다.";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "러닝 기록을 확인 하기 위해 건강 데이터가 필요합니다.";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "러닝 경로를 표시하기 위해 위치 권한이 필요합니다.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "러닝 경로를 표시하기 위해 위치 권한이 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -749,6 +869,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		30BBAA5A2CB7DBA800A84090 /* XCRemoteSwiftPackageReference "ios-maps-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googlemaps/ios-maps-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.1.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		30BBAA5B2CB7DBA800A84090 /* GoogleMaps */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 30BBAA5A2CB7DBA800A84090 /* XCRemoteSwiftPackageReference "ios-maps-sdk" */;
+			productName = GoogleMaps;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 30BBA9E62CB501E300A84090 /* Project object */;
 }

@@ -8,11 +8,13 @@
 import Foundation
 
 struct IntervalMainViewModelActions {
-
+    let showIntervalDetail: (IntervalCos) -> Void
 }
 
 protocol IntervalMainViewModelInput {
     func viewDidLoad()
+    
+    func didSelectItem(at index: Int)
 }
 
 protocol IntervalMainViewModelOutput {
@@ -33,6 +35,8 @@ final class DefaultIntervalMainViewModel: IntervalMainViewModel {
     
     private let actions: IntervalMainViewModelActions?
     private let mainQueue: DispatchQueueType
+    
+    private var intervalList: [IntervalCos] = []
     
     // MARK: - OUTPUT
 
@@ -57,5 +61,9 @@ final class DefaultIntervalMainViewModel: IntervalMainViewModel {
     
     func viewDidLoad() {
         
+    }
+    
+    func didSelectItem(at index: Int) {
+        actions?.showIntervalDetail(intervalList[index])
     }
 }

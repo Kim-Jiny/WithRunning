@@ -22,7 +22,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xnM-5G-bqb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1" y="-154"/>
+            <point key="canvasLocation" x="-25" y="-154"/>
         </scene>
         <!--Item 1-->
         <scene sceneID="zc6-j4-ksH">
@@ -43,7 +43,7 @@
         <!--Item-->
         <scene sceneID="Oce-mb-HRV">
             <objects>
-                <viewController id="De8-6U-oJF" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MyHistoryTabViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="De8-6U-oJF" customClass="MyHistoryTabViewController" customModule="WithRunning" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mPf-gb-a0o">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -54,7 +54,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nl9-4i-BBN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="905" y="-154"/>
+            <point key="canvasLocation" x="869" y="-154"/>
         </scene>
         <!--Interval Main View Controller-->
         <scene sceneID="S8I-bQ-c6s">

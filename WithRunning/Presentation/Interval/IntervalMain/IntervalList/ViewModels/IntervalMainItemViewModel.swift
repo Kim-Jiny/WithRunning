@@ -13,8 +13,8 @@ struct IntervalMainItemViewModel: Equatable {
 
 extension IntervalMainItemViewModel {
 
-    init() {
-        self.title = "Test"
+    init(cos: IntervalCos) {
+        self.title = cos.title ?? "unnkown"
     }
 }
 
