@@ -2,7 +2,7 @@
 //  IntervalListItemCell.swift
 //  WithRunning
 //
-//  Created by 김미진 on 10/11/24.
+//  Created by 김미진 on 10/17/24.
 //
 
 import Foundation
@@ -22,7 +22,6 @@ final class IntervalListItemCell: UITableViewCell {
         with viewModel: IntervalMainItemViewModel
     ) {
         self.viewModel = viewModel
-
         titleLabel.text = viewModel.title
     }
 }

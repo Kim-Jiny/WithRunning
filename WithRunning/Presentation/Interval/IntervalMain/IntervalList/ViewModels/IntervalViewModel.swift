@@ -76,6 +76,7 @@ final class DefaultIntervalMainViewModel: IntervalMainViewModel {
     
     private func fetchList(_ courses: [IntervalCourse]) {
         items.value = courses.map(IntervalMainItemViewModel.init)
+        intervalList = courses
     }
     
     

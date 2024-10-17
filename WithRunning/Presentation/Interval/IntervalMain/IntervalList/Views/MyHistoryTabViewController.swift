@@ -9,7 +9,9 @@ import Foundation
 import UIKit
 
 class MyHistoryTabViewController: UIViewController, StoryboardInstantiable {
-
+    
+    var viewModel: IntervalMainViewModel?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
