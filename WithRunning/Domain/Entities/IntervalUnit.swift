@@ -12,6 +12,7 @@ struct IntervalUnit: Equatable, Identifiable {
     let id: Identifier
     let title: String?
     let timeInSeconds: Int
+    let speed: Int // 1~10
 
     // 분과 초를 반환하는 헬퍼 메서드
     func formattedTime() -> String {

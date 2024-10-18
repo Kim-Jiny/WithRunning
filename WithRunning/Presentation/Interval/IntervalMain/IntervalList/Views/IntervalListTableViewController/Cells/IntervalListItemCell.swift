@@ -14,7 +14,8 @@ final class IntervalListItemCell: UITableViewCell {
     static let height = CGFloat(130)
 
     @IBOutlet private var titleLabel: UILabel!
-
+    @IBOutlet weak var trackIcon: UIImageView!
+    
     private var viewModel: IntervalMainItemViewModel!
     private let mainQueue: DispatchQueueType = DispatchQueue.main
 

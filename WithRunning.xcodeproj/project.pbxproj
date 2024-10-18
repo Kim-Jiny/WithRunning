@@ -46,6 +46,8 @@
 		30BBAA8D2CB9166300A84090 /* GetIntervalCourseUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BBAA8C2CB9166300A84090 /* GetIntervalCourseUseCase.swift */; };
 		30E2BACC2CC1181F00BB7057 /* IntervalListItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E2BACA2CC1181F00BB7057 /* IntervalListItemCell.swift */; };
 		30E2BACD2CC1181F00BB7057 /* IntervalListItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30E2BACB2CC1181F00BB7057 /* IntervalListItemCell.xib */; };
+		30E2BAE12CC25FF400BB7057 /* IntervalSpeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E2BAE02CC25FF400BB7057 /* IntervalSpeedView.swift */; };
+		30E2BAE42CC261D700BB7057 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 30E2BAE32CC261D700BB7057 /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +110,7 @@
 		30BBAA8C2CB9166300A84090 /* GetIntervalCourseUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetIntervalCourseUseCase.swift; sourceTree = "<group>"; };
 		30E2BACA2CC1181F00BB7057 /* IntervalListItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalListItemCell.swift; sourceTree = "<group>"; };
 		30E2BACB2CC1181F00BB7057 /* IntervalListItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IntervalListItemCell.xib; sourceTree = "<group>"; };
+		30E2BAE02CC25FF400BB7057 /* IntervalSpeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalSpeedView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +119,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				30BBAA5C2CB7DBA800A84090 /* GoogleMaps in Frameworks */,
+				30E2BAE42CC261D700BB7057 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,6 +147,7 @@
 				30BBAA072CB501E400A84090 /* WithRunningTests */,
 				30BBAA112CB501E400A84090 /* WithRunningUITests */,
 				30BBA9EF2CB501E300A84090 /* Products */,
+				30E2BAE52CC2621200BB7057 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -326,6 +331,7 @@
 			children = (
 				30E2BACA2CC1181F00BB7057 /* IntervalListItemCell.swift */,
 				30E2BACB2CC1181F00BB7057 /* IntervalListItemCell.xib */,
+				30E2BAE02CC25FF400BB7057 /* IntervalSpeedView.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -448,6 +454,13 @@
 			path = UseCases;
 			sourceTree = "<group>";
 		};
+		30E2BAE52CC2621200BB7057 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -466,6 +479,7 @@
 			name = WithRunning;
 			packageProductDependencies = (
 				30BBAA5B2CB7DBA800A84090 /* GoogleMaps */,
+				30E2BAE32CC261D700BB7057 /* SnapKit */,
 			);
 			productName = WithRunning;
 			productReference = 30BBA9EE2CB501E300A84090 /* WithRunning.app */;
@@ -541,6 +555,7 @@
 			mainGroup = 30BBA9E52CB501E300A84090;
 			packageReferences = (
 				30BBAA5A2CB7DBA800A84090 /* XCRemoteSwiftPackageReference "ios-maps-sdk" */,
+				30E2BAE22CC261D700BB7057 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 30BBA9EF2CB501E300A84090 /* Products */;
 			projectDirPath = "";
@@ -611,6 +626,7 @@
 				30BBAA492CB5140F00A84090 /* MypageTabViewController.swift in Sources */,
 				30BBAA822CB9131700A84090 /* DefaultIntervalCourseRepository.swift in Sources */,
 				30BBAA772CB90A5C00A84090 /* AccessibilityIdentifier.swift in Sources */,
+				30E2BAE12CC25FF400BB7057 /* IntervalSpeedView.swift in Sources */,
 				30BBAA802CB9130500A84090 /* IntervalCourseRepository.swift in Sources */,
 				30BBA9F22CB501E300A84090 /* AppDelegate.swift in Sources */,
 				30BBAA532CB517AA00A84090 /* StoryboardInstantiable.swift in Sources */,
@@ -971,6 +987,14 @@
 				minimumVersion = 9.1.1;
 			};
 		};
+		30E2BAE22CC261D700BB7057 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -978,6 +1002,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 30BBAA5A2CB7DBA800A84090 /* XCRemoteSwiftPackageReference "ios-maps-sdk" */;
 			productName = GoogleMaps;
+		};
+		30E2BAE32CC261D700BB7057 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 30E2BAE22CC261D700BB7057 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

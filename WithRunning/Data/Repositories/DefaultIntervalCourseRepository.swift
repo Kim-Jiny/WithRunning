@@ -21,11 +21,11 @@ extension DefaultIntervalCourseRepository: IntervalCourseRepository {
         
         //  MARK: - 추후 통신이 추가해야함.
         let sampleIntervalUnits: [IntervalUnit] = [
-            IntervalUnit(id: "1", title: "Run", timeInSeconds: 300),  // 5분 뛰기
-            IntervalUnit(id: "2", title: "Rest", timeInSeconds: 120), // 2분 쉬기
-            IntervalUnit(id: "3", title: "Run", timeInSeconds: 360),  // 6분 뛰기
-            IntervalUnit(id: "4", title: "Rest", timeInSeconds: 120), // 2분 쉬기
-            IntervalUnit(id: "5", title: "Run", timeInSeconds: 420)   // 7분 뛰기
+            IntervalUnit(id: "1", title: "Run", timeInSeconds: 300, speed: 8),  // 5분 뛰기
+            IntervalUnit(id: "2", title: "Rest", timeInSeconds: 120, speed: 1), // 2분 쉬기
+            IntervalUnit(id: "3", title: "Run", timeInSeconds: 360, speed: 8),  // 6분 뛰기
+            IntervalUnit(id: "4", title: "Rest", timeInSeconds: 120, speed: 1), // 2분 쉬기
+            IntervalUnit(id: "5", title: "Run", timeInSeconds: 420, speed: 8)   // 7분 뛰기
         ]
 
         let sampleIntervalCourse = IntervalCourse(id: "course1", title: "Interval Training", oneTrack: sampleIntervalUnits)
