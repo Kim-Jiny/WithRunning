@@ -22,14 +22,35 @@ class IntervalSpeedView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setUpSpeedView(_ unit: IntervalUnit) {
-        mainStackView.axis = .horizontal
+    func setUpSpeedView(_ unit: IntervalUnit) {
+        mainStackView.axis = .vertical
         self.addSubview(mainStackView)
         
+        mainStackView.snp.makeConstraints { 
+            $0.top.bottom.leading.trailing.equalToSuperview()
+        }
         self.mainStackView.addArrangedSubview(spacingView)
         self.mainStackView.addArrangedSubview(unitView)
         unitView.snp.makeConstraints {
-            $0.width.equalTo(unit.speed * 2)
+            $0.height.equalTo(unit.speed * 4)
+        }
+        unitView.backgroundColor = getSpeedColor(unit.speed)
+    }
+    
+    private func getSpeedColor(_ speed: Int) -> UIColor {
+        switch speed {
+        case 1,2:
+            return UIColor.speedMain4
+        case 3,4:
+            return UIColor.speedMain3
+        case 5,6:
+            return UIColor.speedMain2
+        case 7,8:
+            return UIColor.speedMain1
+        case 9,10:
+            return UIColor.speedMain0
+        default:
+            return UIColor.white
         }
     }
 }
