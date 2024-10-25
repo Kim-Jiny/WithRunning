@@ -12,6 +12,14 @@ struct IntervalMainItemViewModel: Equatable {
     let id: Identifier
     let title: String?
     let oneTrack: [IntervalUnit]
+    
+    // 분과 초를 반환하는 헬퍼 메서드
+    func formattedTime() -> String {
+        let totalTimeInSeconds = oneTrack.reduce(0) { $0 + $1.timeInSeconds }
+        let minutes = totalTimeInSeconds / 60
+        let seconds = totalTimeInSeconds % 60
+        return "\(minutes)분 \(seconds)초"
+    }
 }
 
 extension IntervalMainItemViewModel {

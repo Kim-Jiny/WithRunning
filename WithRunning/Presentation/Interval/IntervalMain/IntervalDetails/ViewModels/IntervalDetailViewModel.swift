@@ -13,6 +13,7 @@ protocol IntervalDetailViewModelInput {
 
 protocol IntervalDetailViewModelOutput {
     var title: String { get }
+    var oneTrack: [IntervalUnit] { get }
 }
 
 protocol IntervalDetailViewModel: IntervalDetailViewModelInput, IntervalDetailViewModelOutput { }
@@ -20,6 +21,7 @@ protocol IntervalDetailViewModel: IntervalDetailViewModelInput, IntervalDetailVi
 final class DefaultIntervalDetailViewModel: IntervalDetailViewModel {
     
     let title: String
+    let oneTrack: [IntervalUnit]
     private let mainQueue: DispatchQueueType
     
     init(
@@ -27,6 +29,7 @@ final class DefaultIntervalDetailViewModel: IntervalDetailViewModel {
         mainQueue: DispatchQueueType = DispatchQueue.main
     ) {
         self.title = course.title ?? ""
+        self.oneTrack = course.oneTrack
         self.mainQueue = mainQueue
     }
 }

@@ -40,18 +40,21 @@ class IntervalMainViewController: UITabBarController, StoryboardInstantiable {
     private func setupViews() {
         // 각 ViewController를 xib에서 불러오기
         let firstVC = IntervalListTabViewController.instantiateViewController(from: UIStoryboard(name: "IntervalMainViewController", bundle: nil))
-        firstVC.tabBarItem = UITabBarItem(title: "First", image: UIImage(systemName: "1.circle"), tag: 0)
+        firstVC.tabBarItem = UITabBarItem(title: "추천 코스", image: UIImage(systemName: "1.circle"), tag: 0)
         firstVC.viewModel = viewModel
         let secondVC = MypageTabViewController.instantiateViewController(from: UIStoryboard(name: "IntervalMainViewController", bundle: nil))
-        secondVC.tabBarItem = UITabBarItem(title: "Second", image: UIImage(systemName: "2.circle"), tag: 1)
+        secondVC.tabBarItem = UITabBarItem(title: "나의 코스", image: UIImage(systemName: "2.circle"), tag: 1)
         secondVC.viewModel = viewModel
         let thirdVC = MyHistoryTabViewController.instantiateViewController(from: UIStoryboard(name: "IntervalMainViewController", bundle: nil))
-        thirdVC.tabBarItem = UITabBarItem(title: "third", image: UIImage(systemName: "3.circle"), tag: 2)
+        thirdVC.tabBarItem = UITabBarItem(title: "설정", image: UIImage(systemName: "3.circle"), tag: 2)
         thirdVC.viewModel = viewModel
+        let fourthVC = MyHistoryTabViewController.instantiateViewController(from: UIStoryboard(name: "IntervalMainViewController", bundle: nil))
+        fourthVC.tabBarItem = UITabBarItem(title: "내 기록", image: UIImage(systemName: "4.circle"), tag: 2)
+        fourthVC.viewModel = viewModel
         
         // 뷰 컨트롤러들을 탭 바에 추가
-        self.viewControllers = [firstVC, secondVC, thirdVC]
-        self.tabBar.tintColor = .intervalTabTint
+        self.viewControllers = [firstVC, secondVC, fourthVC, thirdVC]
+        self.tabBar.tintColor = .speedMain0
     }
 
     private func setupBehaviours() {

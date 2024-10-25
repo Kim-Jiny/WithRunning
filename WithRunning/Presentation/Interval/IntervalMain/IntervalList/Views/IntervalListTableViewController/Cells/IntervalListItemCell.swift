@@ -14,8 +14,9 @@ final class IntervalListItemCell: UITableViewCell {
     static let height = CGFloat(130)
 
     @IBOutlet private var titleLabel: UILabel!
-    @IBOutlet weak var trackIcon: UIImageView!
+    @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var speedStack: UIStackView!
+    @IBOutlet weak var repeatCount: UILabel!
     
     private var viewModel: IntervalMainItemViewModel!
     private let mainQueue: DispatchQueueType = DispatchQueue.main
@@ -25,6 +26,7 @@ final class IntervalListItemCell: UITableViewCell {
     ) {
         self.viewModel = viewModel
         titleLabel.text = viewModel.title
+        timeLabel.text = "( 총 \(viewModel.formattedTime()) )"
         // 전체 시간 계산
         let totalTimeInSeconds = viewModel.oneTrack.reduce(0) { $0 + $1.timeInSeconds }
         // 각 interval에 대한 비율에 맞는 뷰 생성
@@ -41,5 +43,8 @@ final class IntervalListItemCell: UITableViewCell {
             }
             speedStack.addArrangedSubview(UIView())
         }
+        
+        repeatCount.text = "0회\n반복됨"
+        self.selectionStyle = .none
     }
 }
